@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <type name="Magento\Framework\Console\CommandList">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+
+                <!-- BASE -->
+                <item name="m2_base" xsi:type="object">Vendor\M2Migration\Console\Command\BaseCommand</item>
+
+                <!-- STORE + CONFIG -->
+                <item name="m2_stores" xsi:type="object">Vendor\M2Migration\Console\Command\StoreCommand</item>
+                <item name="m2_config" xsi:type="object">Vendor\M2Migration\Console\Command\ConfigCommand</item>
+
+                <!-- EAV -->
+                <item name="m2_eav" xsi:type="object">Vendor\M2Migration\Console\Command\EavCommand</item>
+
+                <!-- CATALOG -->
+                <item name="m2_categories" xsi:type="object">Vendor\M2Migration\Console\Command\CategoryCommand</item>
+                <item name="m2_products" xsi:type="object">Vendor\M2Migration\Console\Command\ProductCommand</item>
+                <item name="m2_product_relations" xsi:type="object">Vendor\M2Migration\Console\Command\ProductRelationCommand</item>
+
+                <!-- CUSTOMER -->
+                <item name="m2_customers" xsi:type="object">Vendor\M2Migration\Console\Command\CustomerCommand</item>
+                <item name="m2_addresses" xsi:type="object">Vendor\M2Migration\Console\Command\AddressCommand</item>
+
+                <!-- INVENTORY + TAX -->
+                <item name="m2_inventory" xsi:type="object">Vendor\M2Migration\Console\Command\InventoryCommand</item>
+                <item name="m2_tax" xsi:type="object">Vendor\M2Migration\Console\Command\TaxCommand</item>
+
+                <!-- SALES -->
+                <item name="m2_cart" xsi:type="object">Vendor\M2Migration\Console\Command\CartCommand</item>
+                <item name="m2_orders" xsi:type="object">Vendor\M2Migration\Console\Command\OrderCommand</item>
+
+                <!-- RULES -->
+                <item name="m2_catalog_rules" xsi:type="object">Vendor\M2Migration\Console\Command\CatalogRuleCommand</item>
+                <item name="m2_sales_rules" xsi:type="object">Vendor\M2Migration\Console\Command\SalesRuleCommand</item>
+
+                <!-- CMS -->
+                <item name="m2_cms" xsi:type="object">Vendor\M2Migration\Console\Command\CmsCommand</item>
+
+                <!-- URL -->
+                <item name="m2_url" xsi:type="object">Vendor\M2Migration\Console\Command\UrlRewriteCommand</item>
+
+                <!-- SEQUENCE -->
+                <item name="m2_sequence" xsi:type="object">Vendor\M2Migration\Console\Command\SequenceCommand</item>
+
+                <!-- ADMIN -->
+                <item name="m2_admin" xsi:type="object">Vendor\M2Migration\Console\Command\AdminCommand</item>
+
+            </argument>
+        </arguments>
+    </type>
+
+</config>

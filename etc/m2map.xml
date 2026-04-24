@@ -1,0 +1,205 @@
+<?xml version="1.0"?>
+<mapping>
+
+    <!-- ========================= -->
+    <!-- GLOBAL -->
+    <!-- ========================= -->
+    <global>
+        <include_all_tables>true</include_all_tables>
+        <auto_map_fields>true</auto_map_fields>
+    </global>
+
+    <!-- ========================= -->
+    <!-- IGNORE TABLES -->
+    <!-- ========================= -->
+    <ignore>
+        <table>magento_%</table>
+        <table>admin_ui_sdk_%</table>
+        <table>amazon_%</table>
+        <table>company</table>
+
+        <table>%_cl</table>
+        <table>%_index%</table>
+        <table>%_replica</table>
+        <table>%_tmp</table>
+
+        <table>log_%</table>
+        <table>report_%</table>
+        <table>cron_schedule</table>
+    </ignore>
+
+    <!-- ========================= -->
+    <!-- GLOBAL FIELD IGNORE -->
+    <!-- ========================= -->
+    <ignore_field>
+        <field>created_in</field>
+        <field>updated_in</field>
+    </ignore_field>
+
+    <!-- ========================= -->
+    <!-- ROW_ID BASED TABLES -->
+    <!-- ========================= -->
+
+    <!-- PRODUCT -->
+    <entity name="catalog_product_entity">
+        <transform><use_row_id>true</use_row_id></transform>
+    </entity>
+    <entity name="catalog_product_entity_*">
+        <transform><use_row_id>true</use_row_id></transform>
+    </entity>
+
+    <!-- CATEGORY -->
+    <entity name="catalog_category_entity">
+        <transform><use_row_id>true</use_row_id></transform>
+    </entity>
+    <entity name="catalog_category_entity_*">
+        <transform><use_row_id>true</use_row_id></transform>
+    </entity>
+
+    <!-- RULES -->
+    <entity name="catalogrule_product">
+        <transform><use_row_id>true</use_row_id></transform>
+    </entity>
+    <entity name="catalogrule_product_price">
+        <transform><use_row_id>true</use_row_id></transform>
+    </entity>
+
+    <!-- ========================= -->
+    <!-- CORE STRUCTURE -->
+    <!-- ========================= -->
+
+    <!-- STORE -->
+    <entity name="store_%"/>
+
+    <!-- CONFIG -->
+    <entity name="core_config_data"/>
+
+    <!-- ========================= -->
+    <!-- EAV (CRITICAL) -->
+    <!-- ========================= -->
+
+    <entity name="eav_entity_type"/>
+    <entity name="eav_attribute"/>
+    <entity name="eav_attribute_set"/>
+    <entity name="eav_attribute_group"/>
+    <entity name="eav_entity_attribute"/>
+
+    <!-- ========================= -->
+    <!-- PRODUCT EAV -->
+    <!-- ========================= -->
+
+    <entity name="catalog_product_entity_*"/>
+    <entity name="catalog_category_entity_*"/>
+    <entity name="customer_entity_*"/>
+
+    <!-- ========================= -->
+    <!-- CUSTOMER -->
+    <!-- ========================= -->
+
+    <entity name="customer_entity"/>
+    <entity name="customer_address_entity"/>
+    <entity name="customer_%"/>
+
+    <!-- ========================= -->
+    <!-- SALES -->
+    <!-- ========================= -->
+
+    <entity name="sales_%"/>
+    <entity name="quote_%"/>
+
+    <!-- ========================= -->
+    <!-- CMS -->
+    <!-- ========================= -->
+
+    <entity name="cms_%"/>
+
+    <!-- ========================= -->
+    <!-- PRODUCT RELATIONS -->
+    <!-- ========================= -->
+
+    <entity name="catalog_category_product"/>
+    <entity name="catalog_product_website"/>
+    <entity name="catalog_product_relation"/>
+    <entity name="catalog_product_link"/>
+    <entity name="catalog_product_super_link"/>
+    <entity name="catalog_product_super_attribute"/>
+
+    <!-- ========================= -->
+    <!-- INVENTORY -->
+    <!-- ========================= -->
+
+    <entity name="cataloginventory_%"/>
+
+    <!-- ========================= -->
+    <!-- URL -->
+    <!-- ========================= -->
+
+    <entity name="url_rewrite"/>
+    <entity name="catalog_url_rewrite_product_category"/>
+
+    <!-- ========================= -->
+    <!-- SEARCH -->
+    <!-- ========================= -->
+
+    <entity name="catalogsearch_%"/>
+
+    <!-- ========================= -->
+    <!-- SEQUENCE -->
+    <!-- ========================= -->
+
+    <entity name="sequence_%"/>
+
+    <!-- ========================= -->
+    <!-- CACHE -->
+    <!-- ========================= -->
+
+    <entity name="cache"/>
+    <entity name="cache_tag"/>
+
+    <!-- ========================= -->
+    <!-- PRIORITY ORDER (CRITICAL) -->
+    <!-- ========================= -->
+
+    <priority>
+
+        <!-- STORE -->
+        <table>store_website</table>
+        <table>store_group</table>
+        <table>store</table>
+
+        <!-- CONFIG -->
+        <table>core_config_data</table>
+
+        <!-- EAV CORE -->
+        <table>eav_entity_type</table>
+        <table>eav_attribute</table>
+        <table>eav_attribute_set</table>
+        <table>eav_attribute_group</table>
+        <table>eav_entity_attribute</table>
+
+        <!-- CATEGORY -->
+        <table>catalog_category_entity</table>
+        <table>catalog_category_entity_varchar</table>
+        <table>catalog_category_entity_int</table>
+        <table>catalog_category_entity_text</table>
+
+        <!-- PRODUCT -->
+        <table>catalog_product_entity</table>
+        <table>catalog_product_entity_int</table>
+        <table>catalog_product_entity_varchar</table>
+        <table>catalog_product_entity_text</table>
+        <table>catalog_product_entity_decimal</table>
+        <table>catalog_product_entity_datetime</table>
+
+        <!-- CUSTOMER -->
+        <table>customer_entity</table>
+        <table>customer_entity_varchar</table>
+        <table>customer_entity_int</table>
+        <table>customer_entity_text</table>
+
+        <!-- SALES -->
+        <table>sales_order</table>
+
+    </priority>
+
+</mapping>
